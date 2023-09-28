@@ -9,9 +9,9 @@ const HomePage = () => {
 
   const { todos, completedTodos } = todoLists;
   return (
-    <Box component={'div'}>
+    <Box component={'div'} className='p-5'>
       <UserInput />
-      <Box component={'div'}>
+      <Box component={'div'} className='pt-3'>
         <TodoList list={todos} />
       </Box>
     </Box>

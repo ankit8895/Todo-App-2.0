@@ -10,13 +10,15 @@ const UserInput = () => {
 
   const handleUserInput = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       dispatch(
         actions.addTodo({
           id: uuidv4(),
           title: task,
-          status: false,
         })
       );
+
+      setTask('');
     }
   };
 

@@ -13,6 +13,19 @@ const todoSlice = createSlice({
 
       localStorage.setItem('todosLocal', JSON.stringify(state.todos));
     },
+    deleteTodo: (state, action) => {
+      const deletedTodo = action.payload;
+      state.todos = state.todos.filter((todo) => todo.id !== deletedTodo.id);
+      localStorage.setItem('todosLocal', JSON.stringify(state.todos));
+    },
+    updateTodo: (state, action) => {
+      const updatedTodo = action.payload;
+      state.todos = state.todos.filter((todo) => todo.id !== updatedTodo.id);
+      state.completedTodos.push(updatedTodo);
+
+      localStorage.setItem('todosLocal', JSON.stringify(state.todos));
+      localStorage.setItem('completedTodosLocal', JSON.stringify(state.todos));
+    },
   },
 });
 
