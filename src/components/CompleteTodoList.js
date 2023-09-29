@@ -13,16 +13,12 @@ import {
   Tooltip,
 } from '@mui/material';
 
-import { Delete, CheckBox } from '@mui/icons-material';
+import { DeleteForever } from '@mui/icons-material';
 
-const TodoList = ({ list }) => {
+const CompleteTodoList = ({ list }) => {
   const dispatch = useDispatch();
-  const handleDelete = (todo) => {
-    dispatch(actions.deleteTodo(todo));
-  };
-
-  const handleUpdate = (todo) => {
-    dispatch(actions.updateTodo(todo));
+  const handleDeleteForever = (todo) => {
+    dispatch(actions.removeTodoForever(todo));
   };
   return (
     <Box component={'div'} sx={{ width: { xs: '90vw', lg: '45vw' } }}>
@@ -36,7 +32,7 @@ const TodoList = ({ list }) => {
               component={'div'}
               className='fw-bolder text-white'
             >
-              Task List
+              Completed Task
             </Typography>
             {list.map((task) => (
               <Box
@@ -49,21 +45,16 @@ const TodoList = ({ list }) => {
                     width: '60%',
                   }}
                   component={'p'}
+                  className='text-decoration-line-through text-body-secondary'
                 >
                   {task.title}
                 </Typography>
-                <Box component={'span'} className='ms-2'>
-                  <Tooltip title='Mark Complete'>
-                    <IconButton onClick={() => handleUpdate(task)}>
-                      <CheckBox />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title='Delete'>
-                    <IconButton onClick={() => handleDelete(task)}>
-                      <Delete />
-                    </IconButton>
-                  </Tooltip>
-                </Box>
+
+                <Tooltip title='Delete'>
+                  <IconButton onClick={() => handleDeleteForever(task)}>
+                    <DeleteForever />
+                  </IconButton>
+                </Tooltip>
               </Box>
             ))}
           </CardContent>
@@ -73,4 +64,4 @@ const TodoList = ({ list }) => {
   );
 };
 
-export default TodoList;
+export default CompleteTodoList;

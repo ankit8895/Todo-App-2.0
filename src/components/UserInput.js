@@ -27,12 +27,13 @@ const UserInput = () => {
       <TextField
         required
         id='standard-basic'
-        label='Standard'
-        variant='standard'
+        label='Title'
+        variant='outlined'
         value={task}
-        style={{ width: '80vw' }}
         onChange={(e) => setTask(e.target.value)}
         onKeyDown={(e) => handleUserInput(e)}
+        sx={{ width: '80vw', color: '#1976D2' }}
+        focused
       />
     </Box>
   );

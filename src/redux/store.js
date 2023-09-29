@@ -6,7 +6,7 @@ const todosInfoFromStorage = localStorage.getItem('todosLocal')
   : [];
 
 const completedTodos = localStorage.getItem('completedTodosLocal')
-  ? JSON.parse(localStorage.getItem('completedTodos'))
+  ? JSON.parse(localStorage.getItem('completedTodosLocal'))
   : [];
 
 const preloadedState = {
