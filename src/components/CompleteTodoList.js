@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
+import Finished from '../animationComponents/Finished';
 import { actions } from '../redux/reducers/todoReducer';
 import {
   Box,
@@ -24,7 +24,13 @@ const CompleteTodoList = ({ list }) => {
     <Box component={'div'} sx={{ width: { xs: '90vw', lg: '45vw' } }}>
       <Card sx={{ width: '100%', backgroundColor: '#2196f3' }}>
         <CardActionArea>
-          <CardMedia></CardMedia>
+          <CardMedia
+            sx={{
+              height: 300,
+            }}
+          >
+            <Finished />
+          </CardMedia>
           <CardContent>
             <Typography
               gutterBottom
@@ -38,14 +44,14 @@ const CompleteTodoList = ({ list }) => {
               <Box
                 component={'div'}
                 key={task.id}
-                className='d-flex justify-content-between align-items-center w-80 gap-3 p-2'
+                className='d-flex justify-content-between align-items-center w-80 gap-3 p-2 bg-white rounded mb-2'
               >
                 <Typography
                   sx={{
                     width: '60%',
                   }}
                   component={'p'}
-                  className='text-decoration-line-through text-body-secondary'
+                  className='text-decoration-line-through text-body-secondary fw-semibold'
                 >
                   {task.title}
                 </Typography>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
+import Running from '../animationComponents/Running';
 import { actions } from '../redux/reducers/todoReducer';
 import {
   Box,
@@ -28,7 +28,13 @@ const TodoList = ({ list }) => {
     <Box component={'div'} sx={{ width: { xs: '90vw', lg: '45vw' } }}>
       <Card sx={{ width: '100%', backgroundColor: '#2196f3' }}>
         <CardActionArea>
-          <CardMedia></CardMedia>
+          <CardMedia
+            sx={{
+              height: 300,
+            }}
+          >
+            <Running />
+          </CardMedia>
           <CardContent>
             <Typography
               gutterBottom
@@ -42,13 +48,14 @@ const TodoList = ({ list }) => {
               <Box
                 component={'div'}
                 key={task.id}
-                className='d-flex justify-content-between align-items-center w-80 gap-3 p-2'
+                className='d-flex justify-content-between align-items-center w-80 gap-3 p-2 bg-white rounded mb-2'
               >
                 <Typography
                   sx={{
                     width: '60%',
                   }}
                   component={'p'}
+                  className='fw-semibold'
                 >
                   {task.title}
                 </Typography>
