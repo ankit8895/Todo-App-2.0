@@ -1,3 +1,36 @@
+# Offline TODO App (React JS)
+
+This is a simple TODO application built using React JS that allows users to manage their tasks. The app is designed to work offline, providing a seamless experience even without an internet connection.
+
+[https://todo-application-2.netlify.app/](https://todo-application-2.netlify.app/)
+
+## Key Features
+
+- Add Todos: Use the simple input bar to add new tasks by pressing the return key.
+
+- Todo Cards: Each todo is displayed as a card, which is appended upon creation.
+
+- Mark as Complete: Clicking on a todo card marks it as complete and moves it to the bottom of the list.
+
+- Sorting: Active todo cards are displayed in order of creation, with the most recent on top. Completed todos are sorted by completion time, with the most recent on top.
+
+- Reset Functionality: A reset button in the top right corner allows users to clear all todos and return to the initial state.
+
+
+## Additional Features
+
+- Offline Functionality: The app is designed to work seamlessly even without an internet connection. Refreshing the browser does not affect the app's state.
+
+- Responsive Design: The app is built with a responsive design to ensure it works well on both desktop and mobile devices.
+
+## Teck Stack
+
+- React
+- Material UI
+- Tailwind CSS
+- LottieFiles (animation)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
